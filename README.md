@@ -1,8 +1,8 @@
 # WEB system
-- [ ] Replace "WEB system" with your system name - Hungryhunter
+- [ ] Replace "WEB system" with your system name - Hungryhunter - Restaurant Finder
 
 ## Description
-- [ ] Provide WEB system description in few sentences - its purpose, users, etc. - This web system provides inforamtions of various restaurants by search. Based on Zomato.
+- [ ] Provide WEB system description in few sentences - its purpose, users, etc. - This web system provides inforamtions of various restaurants, their food by search. Based on Zomato.
 
 ## Entity definition
 - [ ] Define the entity ("object" that will be manipulated) of WEB system
