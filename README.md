@@ -5,15 +5,15 @@
 - [ ] Provide WEB system description in few sentences - its purpose, users, etc. - This web system provides inforamtions of various restaurants, their food by search. Based on Zomato.
 
 ## Entity definition
-- [ ] Define the entity ("object" that will be manipulated) of WEB system
-- [ ] Entity should have a name
+- [ ] Define the entity ("object" that will be manipulated) of WEB system - Searching entity
+- [ ] Entity should have a name - Search
 - [ ] Entity should have 3 mandatory attributes:
-    - [ ] ID - depending on specific service this could be a number or string
-    - [ ] Creation date - (if applicable for specific service) ISO 8601 format date string
-    - [ ] Modification date - (if applicable for specific service) ISO 8601 format date string
-- [ ] Entity should have at least 5 custom attributes
-    - [ ] Each attribute should have a type defined: number, string, ISO 8601 date string, boolean, object, array or other
-    - [ ] Each attribute should have restrictions defined: list of constants, or number range, or string length, or string format, or object schema, or array schema or other. For example, you can use `joi` language to define restrictions: https://github.com/hapijs/joi/blob/v13.1.2/API.md
+    - [ ] ID - depending on specific service this could be a number or string - Number(8 letters)
+    - [ ] Creation date - (if applicable for specific service) ISO 8601 format date string - mm/dd/yyyy
+    - [ ] Modification date - (if applicable for specific service) ISO 8601 format date string - mm/dd/yyyy
+- [ ] Entity should have at least 5 custom attributes - Region; Country; City; Street; House number.
+    - [ ] Each attribute should have a type defined: number, string, ISO 8601 date string, boolean, object, array or other. - Region - string; Country - string; City - string; Street - string; House number - number.
+    - [ ] Each attribute should have restrictions defined: list of constants, or number range, or string length, or string format, or object schema, or array schema or other. For example, you can use `joi` language to define restrictions: https://github.com/hapijs/joi/blob/v13.1.2/API.md - all will use 15 letter string range, but the house number will use 999 letter range.
 
 ## API definition
 - [ ] Define specific service (konkrečios paslaugos) API methods that WEB system is going to use
