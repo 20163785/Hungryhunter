@@ -22,14 +22,14 @@ R - Read - GET;
 U - Update - PUT;
 D - Delete - DELETE;
 - [ ] API should have at least 4 methods:
-    - [ ] A method to return entity by ID. Should not have request body: https://www.tutorialsteacher.com/webapi/implement-get-method-in-web-api
-    - [ ] A method to return multiple entities (Array) by ID. This method should support at least one header value to: https://thoughts-on-java.org/fetch-multiple-entities-id-hibernate/
-        - [ ] Return only entities that match pattern in one of its attributes
-        - [ ] Return 10 entities starting provided index
-        - [ ] Return sorted entities by one of its attributes (both ascending and descending)
+    - [ ] A method to return entity by ID. Should not have request body: https://www.tutorialsteacher.com/webapi/implement-get-method-in-web-api - So this method returns an entity, also if the entity is not found it will return a response: "404 NotFound". https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.2 - aditional method.
+    - [ ] A method to return multiple entities (Array) by ID. This method should support at least one header value to: https://thoughts-on-java.org/fetch-multiple-entities-id-hibernate/ ; https://softwareengineering.stackexchange.com/questions/335768/can-a-rest-api-return-multiple-resources-as-one-single-compound-resource - Aditional URI method to sort returned entities.
+        - [ ] Return only entities that match pattern in one of its attributes - Hibernate’s default behaviour already takes care of it and it’s most often also good enough for performance critical use cases.
+        - [ ] Return 10 entities starting provided index - byMultipleIds(Class entityClass): In hibernate Session and provide the class of the entities you want to load as a parameter
+        - [ ] Return sorted entities by one of its attributes (both ascending and descending) - This code receives a sortOrder parameter from the query string in the URL. The query string value is provided by ASP.NET MVC as a parameter to the action method. The parameter is a string that's either "Name" or "Date", optionally followed by an underscore and the string "desc" to specify descending order. The default sort order is ascending.
         - [ ] Other (should be approved by Product Owner (PO))
-    - [ ] A method to remove entity by ID. Returns removed entity. Should not have request body - https://thoughts-on-java.org/fetch-multiple-entities-id-hibernate/
-    - [ ] A method to update entity by ID. Accepts entity to update and returns updated entity - https://thoughts-on-java.org/fetch-multiple-entities-id-hibernate/
+    - [ ] A method to remove entity by ID. Returns removed entity. Should not have request body - https://dotnettutorials.net/lesson/delete-method-in-web-api/ - This works fine and deletes the employee record from the database as expected. The problem here is that since the return type of the Delete method is void, we get status code 204 No Content. When the Deletion is successful, we want to return status code 200 OK indicating that the deletion is successful.https://docs.microsoft.com/en-us/dotnet/framework/data/wcf/how-to-add-modify-and-delete-entities-wcf-data-services - URI.
+    - [ ] A method to update entity by ID. Accepts entity to update and returns updated entity - https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/webapi/update-delete-entities-using-web-api - Retrieve data from an entity you are updating, you can compose your PATCH request so that data from the created record will be returned with a status of 200 (OK). To get this result, you must use the return=representation preference in the request headers. https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/webapi/create-update-entity-relationships-using-web-api - URI.
 - [ ] Each method should have HTTP method defined
 - [ ] Each method should have URI defined (use {id} as entity ID placeholder)
 - [ ] Should return all 4xx errors in unified format. Define format using `joi` language
