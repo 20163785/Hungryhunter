@@ -22,7 +22,7 @@ R - Read - GET;
 U - Update - PUT;
 D - Delete - DELETE;
 - [ ] API should have at least 4 methods:
-    - [ ] A method to return entity by ID. Should not have request body: https://www.tutorialsteacher.com/webapi/implement-get-method-in-web-api - So this method returns an entity, also if the entity is not found it will return a response: "404 NotFound". https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.2 - aditional method.
+    - [ ] A method to return entity by ID. Should not have request body: https://www.tutorialsteacher.com/webapi/implement-get-method-in-web-api - So this method returns an entity, also if the entity is not found it will return a response: "404 NotFound". https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.2 - aditional method. https://restfulapi.net/resource-naming/ - URI.
     - [ ] A method to return multiple entities (Array) by ID. This method should support at least one header value to: https://thoughts-on-java.org/fetch-multiple-entities-id-hibernate/ ; https://softwareengineering.stackexchange.com/questions/335768/can-a-rest-api-return-multiple-resources-as-one-single-compound-resource - Aditional URI method to sort returned entities.
         - [ ] Return only entities that match pattern in one of its attributes - Hibernate’s default behaviour already takes care of it and it’s most often also good enough for performance critical use cases.
         - [ ] Return 10 entities starting provided index - byMultipleIds(Class entityClass): In hibernate Session and provide the class of the entities you want to load as a parameter
