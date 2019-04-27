@@ -12,7 +12,7 @@ Hungryhunter - Restaurant Finder
  City - string (max length: 99);
  Street - string (max length: 99);
  House number - number (max number: 999);
- Restaurant name - string (max length: 990000000000).
+ Restaurant name - string (max length: 99).
 
 
 ## API definition
@@ -24,7 +24,23 @@ R - Read - GET - Get information from database by country;
 R - Read - GET - Get information from database by city;
 R - Read - GET - Get information from database by street;
 R - Read - GET - Get information from database by house number;
-R - Read - GET - Get information from database by restaurant namer.
+R - Read - GET - Get information from database by restaurant namer;
+
+GET /api/category/:categoryId?size=:size&from=:from
+404 category id not found
+PUT  /api/phrase/:id
+400 err message when validation fails
+POST /phrase
+400 err message when validation fails
+Get /api/phrase/:id
+404 phrase id not found
+DELETE /phrase/id
+404 phrase id not found
+Post /category
+400 err message when validation fail
+
+"404 NotFound" for all
+
 
 
  https://www.tutorialsteacher.com/webapi/implement-get-method-in-web-api - So IActionResult type method returns an entity with error if not found: 
