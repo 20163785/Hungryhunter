@@ -7,44 +7,44 @@ Hungryhunter - Restaurant Finder
 ## Entity definition
  Restaurant
  
- Region - string (max length: 99);
- Country - string (max length: 99); 
- City - string (max length: 99);
- Street - string (max length: 99);
- House number - number (max number: 999);
- Restaurant name - string (max length: 99).
+ Location - string (max length: 99);
+ Location_details - string (max length: 99); 
+ dailymenu - string (max length: 99);
+ Reviews - string (max length: 99);
+ Restaurant - string (max length: 999);
 
 
 ## API definition
  Search for restaurants in a specific area or just for the restaurant.
 
-C - Create - POST - Create a search by variable defined (Region, country, city, street, house number);
-R - Read - GET - Get information from database by region;
-R - Read - GET - Get information from database by country;
-R - Read - GET - Get information from database by city;
-R - Read - GET - Get information from database by street;
-R - Read - GET - Get information from database by house number;
-R - Read - GET - Get information from database by restaurant namer;
 
-GET /api/category/:categoryId?size=:size&from=:from
-404 category id not found
-PUT  /api/phrase/:id
-400 err message when validation fails
-POST /phrase
-400 err message when validation fails
-Get /api/phrase/:id
-404 phrase id not found
-DELETE /phrase/id
-404 phrase id not found
-Post /category
-400 err message when validation fail
+R - Read - GET - Get information from database by locations;
+R - Read - GET - Get information from database by location_details;
+R - Read - GET - Get information from database by dailymenu;
+R - Read - GET - Get information from database by reviews;
+R - Read - GET - Get information from database by restaurant;
 
-"404 NotFound" for all
-
+GET https://developers.zomato.com/api/v2.1/locations?query=New%20York
+  "code": 403,
+  "status": "Forbidden",
+  "message": "Invalid location parameters"
+GET  https://developers.zomato.com/api/v2.1/location_details?entity_id=location_id&entity_type=location_id
+  "code": 403,
+  "status": "Forbidden",
+  "message": "Invalid location parameters"
+Get https://developers.zomato.com/api/v2.1/dailymenu?res_id=ramen
+400	
+Invalid res_id
+GET https://developers.zomato.com/api/v2.1/restaurant?res_id=ramen
+400	
+Invalid res_id
+GET https://developers.zomato.com/api/v2.1/reviews?res_id=ramen
+400	
+Invalid res_id
 
 
  https://www.tutorialsteacher.com/webapi/implement-get-method-in-web-api - So IActionResult type method returns an entity with error if not found: 
- "404 NotFound". 
+ "403 NotFound". 
  
 byMultipleIds(Class entityClass): In hibernate Session and provide the class of the entities you want to load as a parameter. (List)
          
