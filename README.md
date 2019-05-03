@@ -11,19 +11,24 @@ Hungryhunter - Restaurant Finder
  Location_details - string (max length: 99); 
  dailymenu - string (max length: 99);
  Reviews - string (max length: 99);
- Restaurant - string (max length: 999);
+ Restaurant - string (max length: 99);
 
 
 ## API definition
  Search for restaurants in a specific area or just for the restaurant.
 
 
+R - Read - POST - Post information;
 R - Read - GET - Get information from database by locations;
 R - Read - GET - Get information from database by location_details;
 R - Read - GET - Get information from database by dailymenu;
 R - Read - GET - Get information from database by reviews;
 R - Read - GET - Get information from database by restaurant;
 
+POST https://developers.zomato.com/api/v2.1/locations?query=New%20York
+  "code": 403,
+  "status": "Forbidden",
+  "message": "Invalid location parameters"
 GET https://developers.zomato.com/api/v2.1/locations?query=New%20York
   "code": 403,
   "status": "Forbidden",
